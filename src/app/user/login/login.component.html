@@ -1,0 +1,9 @@
+<h5>
+    Login
+  </h5>
+  
+  <form>
+      <input type="text" #user id="user" class="fadeIn second form-control" name="usuario" placeholder="Usuário" required autofocus><br>
+      <input type="password" #password id="password" class="fadeIn third form-control" name="login" placeholder="Senha" required><br>
+      <input type="submit" class="fadeIn fourth" value="Log In" (click)='logOn(user.value,password.value)'><br>
+  </form>

@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-sm bg-light">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink=''>Home</a>
+    </li>
+    <li *ngIf='!(user$ | async)' class="nav-item">
+      <a class="nav-link" routerLink='login'>Login</a>
+    </li>
+    <li *ngIf='user$ | async as user' class="nav-item">
+      <a class="nav-link" routerLink='login' (click)='logout()'>Logout</a>
+    </li>
+    <li *ngIf='!(user$ | async)' class="nav-item">
+      <a class="nav-link" routerLink='register'>Registre-se</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='user'>Achou um item?</a>
+    </li>
+  </ul>
+</nav>
+
+
+<div class='container mt-5 mb-5'>
+<router-outlet></router-outlet>
+</div>

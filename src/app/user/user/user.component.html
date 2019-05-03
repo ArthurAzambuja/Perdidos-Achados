@@ -1,0 +1,15 @@
+<h1>Achou um item?</h1>
+<h3>Insira o código do item:</h3>
+<form [formGroup]='searchForm' (ngSubmit)='onSubmit()'>
+  <div class='form-group'>
+    <input type="text" formControlName='code'>
+  </div>
+  <div class="form-group">
+    <button type='submit' class='btn btn-primary'>Pesquisar</button>
+  </div>
+</form>
+<div *ngIf="data">
+  <h3>Código do item perdido: {{ data?.code }}</h3>
+  <p>Telefone do dono do item: {{ data?.phone }}</p>
+  <p>E-mail do dono do item: {{ data?.email }}</p>
+</div>
